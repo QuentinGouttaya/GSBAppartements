@@ -8,20 +8,20 @@ namespace GSBAppartement.Domain.Appartement
 {
     public class Appartement
     {
-    public Guid Id { get; set; }
-    public string TypeAppart { get; set; }
-    public decimal PrixLoc { get; set; }
-    public decimal PrixCharge { get; set; }
-    public string Adresse { get; set; }
-    public string Ville { get; set; }
-    public string CodePostal { get; set; }
-    public string Etage { get; set; }
-    public bool AvecAscenseur { get; set; }
-    public bool AvecPreavis { get; set; }
-    public DateTime DateLibre { get; set; }
-    public Guid IdProprietaire { get; set; }
-    public int IdArrondissement { get; set; }
+        public Guid id { get; set; }
+        public string type_appart { get; set; }
+        public decimal prix_loc { get; set; }
+        public decimal prix_charge { get; set; }
+        public string adresse { get; set; }
+        public string ville { get; set; }
+        public string code_postal { get; set; }
+        public string etage { get; set; }
+        public bool avec_ascenseur { get; set; }
+        public bool avec_preavis { get; set; }
+        public DateTime date_libre { get; set; }
+        public Guid id_proprietaire { get; set; }
+        public int id_arrondissement { get; set; }
     }
 
-    
+
 }

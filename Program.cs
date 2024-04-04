@@ -1,6 +1,6 @@
 using GSBAppartement.Repository.Interfaces;
 using GSBAppartement.Repository.Implementations;
-using GSBAppartement.Infrastructure.Context; 
+using GSBAppartement.Infrastructure.Context;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -18,6 +18,28 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 builder.Services.AddScoped<IAppartementRepository, AppartementRepository>();
 
 var app = builder.Build();
+
+using var scope = app.Services.CreateScope();
+var services = scope.ServiceProvider;
+var context = services.GetRequiredService<ApplicationDbContext>();
+try
+{
+    context.Database.CanConnect();
+    Console.WriteLine("Database connection successful.");
+}
+catch (Exception ex)
+{
+    Console.WriteLine($"Error connecting to database: {ex.Message}");
+}
+
+app.MapGet("/", () => "Hello World!");
+
+// Get all appartements
+app.MapGet("/appartements", async (IAppartementRepository repository) =>
+{
+    var appartements = await repository.GetAllAsync();
+    return Results.Ok(appartements);
+});
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

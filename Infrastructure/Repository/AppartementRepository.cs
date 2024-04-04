@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using GSBAppartement.Domain.Appartement;
 using GSBAppartement.Repository.Interfaces;
 using Microsoft.EntityFrameworkCore;
+using GSBAppartement.Infrastructure.Context;
 
 namespace GSBAppartement.Repository.Implementations
 {
@@ -19,17 +20,17 @@ namespace GSBAppartement.Repository.Implementations
 
         public async Task<IEnumerable<Appartement>> GetAllAsync()
         {
-            return await _context.Appartements.ToListAsync();
+            return await _context.Appartement.ToListAsync();
         }
 
         public async Task<Appartement> GetByIdAsync(Guid id)
         {
-            return await _context.Appartements.FindAsync(id);
+            return await _context.Appartement.FindAsync(id);
         }
 
         public async Task<Appartement> AddAsync(Appartement appartement)
         {
-            _context.Appartements.Add(appartement);
+            _context.Appartement.Add(appartement);
             await _context.SaveChangesAsync();
             return appartement;
         }
@@ -43,13 +44,13 @@ namespace GSBAppartement.Repository.Implementations
 
         public async Task<Appartement> DeleteAsync(Guid id)
         {
-            var appartement = await _context.Appartements.FindAsync(id);
+            var appartement = await _context.Appartement.FindAsync(id);
             if (appartement == null)
             {
                 return null;
             }
 
-            _context.Appartements.Remove(appartement);
+            _context.Appartement.Remove(appartement);
             await _context.SaveChangesAsync();
             return appartement;
         }

@@ -12,7 +12,7 @@ namespace GSBAppartement.Domain.Personnes
         public string nom { get; set; }
         public string adresse { get; set; }
         public string ville { get; set; }
-        public int codePostal { get; set; }
-        public int numeroTel { get; set; }
+        public int code_postal { get; set; }
+        public int tel { get; set; }
     }
 }

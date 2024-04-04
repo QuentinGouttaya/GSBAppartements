@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace GSBAppartement.Domain.Personnes
 {
-    public class Locataire : Personne 
+    public class Locataire : Personne
     {
         public int rib { get; set; }
 
-        public int idAppartement { get; set; }
+        public int id_appartement { get; set; }
     }
 }

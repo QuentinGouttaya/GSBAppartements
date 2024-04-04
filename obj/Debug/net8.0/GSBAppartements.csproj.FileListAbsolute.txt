@@ -32,3 +32,8 @@
 /home/dev/GSBAppartement/GSBAppartement/GSBAppartements/obj/Debug/net8.0/GSBAppartements.pdb
 /home/dev/GSBAppartement/GSBAppartement/GSBAppartements/obj/Debug/net8.0/GSBAppartements.genruntimeconfig.cache
 /home/dev/GSBAppartement/GSBAppartement/GSBAppartements/obj/Debug/net8.0/ref/GSBAppartements.dll
+/home/dev/GSBAppartement/GSBAppartement/GSBAppartements/bin/Debug/net8.0/Microsoft.EntityFrameworkCore.dll
+/home/dev/GSBAppartement/GSBAppartement/GSBAppartements/bin/Debug/net8.0/Microsoft.EntityFrameworkCore.Abstractions.dll
+/home/dev/GSBAppartement/GSBAppartement/GSBAppartements/bin/Debug/net8.0/Microsoft.EntityFrameworkCore.Relational.dll
+/home/dev/GSBAppartement/GSBAppartement/GSBAppartements/bin/Debug/net8.0/Npgsql.dll
+/home/dev/GSBAppartement/GSBAppartement/GSBAppartements/bin/Debug/net8.0/Npgsql.EntityFrameworkCore.PostgreSQL.dll

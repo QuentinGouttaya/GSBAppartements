@@ -8,6 +8,6 @@ namespace GSBAppartement.Domain.Personnes
 {
     public class Proprietaire : Personne
     {
-        
+
     }
 }

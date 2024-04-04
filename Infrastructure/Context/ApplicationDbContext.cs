@@ -1,10 +1,25 @@
 using Microsoft.EntityFrameworkCore;
 using GSBAppartement.Domain.Appartement;
-public class ApplicationDbContext : DbContext
+
+namespace GSBAppartement.Infrastructure.Context
 {
-    public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
-        : base(options)
+    public class ApplicationDbContext : DbContext
     {
+        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
+            : base(options)
+        {
+        }
+
+        public DbSet<Appartement> Appartement { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            foreach (var entityType in modelBuilder.Model.GetEntityTypes())
+            {
+                entityType.SetTableName(entityType.DisplayName().ToLower());
+            }
+        }
     }
-        public DbSet<Appartement> Appartements { get; set; }
-    }
+}
